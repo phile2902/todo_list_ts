@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
         "target"    : "ES6",
-        "module"    : "system",
+        "module"    : "CommonJS",
         "outDir"    : "mjs",
-        "outFile"   : "controller.js",
         "removeComments" : false,
         "watch"     : true,
     },
