@@ -9,7 +9,20 @@ class TaskRepository {
         this.tasks = [];
     }
     getTasks(timeRange) {
-        return this.tasks;
+        let foundTasks = [];
+        for (let task of this.tasks) {
+            this.compareDateInRange(task.createdAt, timeRange) ? foundTasks.push(task) : '';
+        }
+        return foundTasks;
+    }
+    compareDateInRange(date, range) {
+        let startDay = new Date();
+        startDay.setHours(0, 0, 0);
+        let endDate = new Date();
+        endDate.setHours(23, 59, 59);
+        return (range == exports.TIME_RANGE_PRECEDING && date.getTime < startDay.getTime) ||
+            (range == exports.TIME_RANGE_UPCOMING && date.getTime > endDate.getTime) ||
+            range == exports.TIME_RANGE_TODAY;
     }
     getTaskById(id) {
         this.tasks.forEach(task => {
@@ -19,8 +32,18 @@ class TaskRepository {
         });
         return null;
     }
-    addTask(id, name, isCompleted) {
-        this.tasks.push(new Task_1.Task(id, name, isCompleted));
+    addTask(name, isCompleted = false) {
+        this.tasks.push(new Task_1.Task(this.generateTaskId(), name, isCompleted));
+    }
+    generateTaskId() {
+        if (this.tasks.length == 0) {
+            return 1;
+        }
+        this.tasks.sort(function (task1, task2) {
+            return task1.id > task2.id ? 1 : -1;
+        });
+        let lastId = this.tasks[0].id;
+        return lastId + 1;
     }
     updateTask(id, isCompleted) {
         this.tasks.forEach(task => {

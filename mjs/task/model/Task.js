@@ -8,25 +8,25 @@ class Task {
         this.isCompleted = isCompleted;
     }
     get id() {
-        return this.id;
+        return this._id;
     }
     set id(id) {
-        this.id = id;
+        this._id = id;
     }
     get name() {
-        return this.name;
+        return this._name;
     }
     set name(name) {
-        this.name = name;
+        this._name = name;
     }
     get isCompleted() {
-        return this.isCompleted;
+        return this._isCompleted;
     }
     set isCompleted(isCompleted) {
-        this.isCompleted = isCompleted;
+        this._isCompleted = isCompleted;
     }
     get createdAt() {
-        return this.createdAt;
+        return this._createdAt;
     }
 }
 exports.Task = Task;

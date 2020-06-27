@@ -12,36 +12,36 @@ export class Task {
 
     public get id(): number
     {
-        return this.id;
+        return this._id;
     }
 
     public set id(id: number)
     {
-        this.id = id;
+        this._id = id;
     }
 
     public get name(): string
     {
-        return this.name;
+        return this._name;
     }
 
     public set name(name: string)
     {
-        this.name = name;
+        this._name = name;
     }
 
     public get isCompleted(): boolean
     {
-        return this.isCompleted;
+        return this._isCompleted;
     }
 
     public set isCompleted(isCompleted: boolean)
     {
-        this.isCompleted = isCompleted;
+        this._isCompleted = isCompleted;
     }
 
     public get createdAt(): Date
     {
-        return this.createdAt;
+        return this._createdAt;
     }
 }

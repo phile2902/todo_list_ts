@@ -23,10 +23,6 @@
 						<div class="panel-heading"><h1 class="panel-title">Preceding</h1></div> 
 						<div class="panel-body" id="preceding_tasks">
 							<!-- List of preceding tasks -->
-							<div data-task="100" class="task_item">
-								<input type="checkbox"> Check me out
-							</div>
-							
                         </div>
 					</div>
 				</div>
@@ -36,7 +32,6 @@
 						<div class="panel-heading"><h1 class="panel-title">Today</h1></div> 
 						<div class="panel-body" id="today_tasks">
 							<!-- List of preceding tasks -->
-							<input type="checkbox"> Check me out
                         </div>
 					</div>
 				</div>
@@ -46,20 +41,21 @@
 						<div class="panel-heading"><h1 class="panel-title">Upcoming</h1></div> 
 						<div class="panel-body" id="upcoming_tasks">
 							<!-- List of preceding tasks -->
-							<input type="checkbox"> Check me out
                         </div>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					<input type="text" class="form-control" id="task_input" placeholder="I want to ...">
-				</div>
-
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<input type="submit" class="btn btn-primary submit_task" value="Add">
-				</div>
+				<form method="POST" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<input type="text" class="form-control" id="task_input" placeholder="I want to ...">
+					</div>
+	
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<input type="button" class="btn btn-primary submit_task" value="Add">
+					</div>
+				</form>
 			</div>
 		</div>
 		
