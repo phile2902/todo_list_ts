@@ -29,4 +29,11 @@ $(document).ready(function () {
         taskRepository.addTask(taskValue);
         appendTasksInHtml(taskRepository);
     });
+    $(".task-list").on('click', '.task_item', function () {
+        let checkedTaskId = $("input:checked").val();
+        if (checkedTaskId != undefined) {
+            taskRepository.removeTask(checkedTaskId);
+        }
+        appendTasksInHtml(taskRepository);
+    });
 });

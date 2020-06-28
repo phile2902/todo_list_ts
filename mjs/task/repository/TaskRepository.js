@@ -42,7 +42,7 @@ class TaskRepository {
         this.tasks.sort(function (task1, task2) {
             return task1.id > task2.id ? 1 : -1;
         });
-        let lastId = this.tasks[0].id;
+        let lastId = this.tasks[this.tasks.length - 1].id;
         return lastId + 1;
     }
     updateTask(id, isCompleted) {
@@ -57,7 +57,7 @@ class TaskRepository {
         if (null == taskPosition) {
             throw new Error("Task not found");
         }
-        this.tasks = this.tasks.splice(taskPosition, 1);
+        this.tasks.splice(taskPosition, 1);
     }
     getTaskPosition(id) {
         let position;

@@ -37,4 +37,14 @@ $(document).ready(function() {
 
         appendTasksInHtml(taskRepository);
     });
+
+    $(".task-list").on('click', '.task_item', function() {
+        let checkedTaskId = $("input:checked").val();
+
+        if (checkedTaskId != undefined) {
+            taskRepository.removeTask(checkedTaskId);
+        }
+
+        appendTasksInHtml(taskRepository);
+    });
 });

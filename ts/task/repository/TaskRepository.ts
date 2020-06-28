@@ -55,7 +55,7 @@ export class TaskRepository implements TaskFinderInterface{
             return task1.id > task2.id ? 1 : -1;
         });
 
-        let lastId = this.tasks[0].id;
+        let lastId = this.tasks[this.tasks.length - 1].id;
 
         return lastId + 1;
     }
@@ -75,7 +75,7 @@ export class TaskRepository implements TaskFinderInterface{
             throw new Error("Task not found");
         }
 
-        this.tasks = this.tasks.splice(taskPosition, 1);
+        this.tasks.splice(taskPosition, 1);
     }
 
     private getTaskPosition(id: number): number {
